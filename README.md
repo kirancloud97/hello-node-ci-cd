@@ -22,13 +22,13 @@ Install Required Packages
 Jenkins Setup
 Create a new Jenkins Pipeline project hello-node-pipeline.
 
-Use the following GitHub repository for the pipeline:
+Used the following GitHub repository for the pipeline:
 https://github.com/kirancloud97/hello-node-ci-cd.git
 
 
 Add Docker Hub Credentials In Jenkins
 Running the Jenkins Pipeline
-any changes to the master branch it will triger the jenkins pipeline.
+any changes to the master branch it will trigger the jenkins pipeline.
 
 Jenkins will automatically Clone the repository ,Build a Docker image, Push the image to Docker Hub
 
