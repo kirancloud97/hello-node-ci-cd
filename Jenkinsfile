@@ -17,15 +17,17 @@ pipeline {
                 }
             }
         }
-        stage('Push to Docker Hub') {
-            steps {
-                script {
-                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
-                        docker.image(DOCKER_IMAGE).push('latest')
-                    }
-                }
+       stage('Push to Docker Hub') {
+    steps {
+        script {
+            docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
+                sh 'docker tag kirancloud97/hello-node kirancloud97/hello-node:latest'
+                sh 'docker push kirancloud97/hello-node:latest'
             }
         }
+    }
+}
+
         stage('Deploy Container') {
             steps {
                 script {
